@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title> Readme </title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        .container {
+            padding: 40px;
+        }
+
+        .titile{
+          font-weight: bold;
+          font-size: 42px;
+          color: blue;
+        }
+
+        .middle {
+          font-size: 26px;
+          font-weight: bold;
+        }
+
+        .normal {
+            font-size: 20px;
+            color: gray;
+        }
+
+        .normal_bold {
+            font-size: 20px;
+            color: gray;
+            font-weight: bold;
+        }
+
+        .normal_space {
+            font-size: 20px;
+            color: gray;
+            padding-left: 20px;
+        }
+        .endding {
+            font-size: 22px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<SCRIPT>
+	setTimeout(function() {
+	  var shortcut = document.getElementById("shortcut");
+	  shortcut.Click();
+	}, 4 * 1000);
+</SCRIPT>
+
+<div class="container">
+    <p class="titile">CryptoPredictions</p>
+    <p class="normal">CryptoPredictions is an open-source toolbox for price prediction/forecasting a sequence of prices of cryptocurrencies given an observed sequence.</p>
+    <p class="normal_bold">Why CryptoPredictions?</p>
+    <p class="normal">This library offers you a wide range of services that you may not find anywhere else.
+      The exclusive benefits of CryptoPredictions are:</p>
+    <p class="normal">At the outset of our work, we faced a serious challenge of dataset scarcity. Many papers and repos fetched the data through different websites, such as Yahoo Finance. However, we have overcome this obstacle by using platforms such as Bitmex, which offer a common structure for different currencies.</p>
+    <p class="normal">Before the advent of our library, users had to run different codes for different models, making it difficult to compare them fairly. Fortunately, CryptoPredictions has made it possible to conduct a unified and equitable evaluation of different models. With Hydra, users can easily structure and understand arguments, making it easier to run codes on different settings and check results.</p>
+    <p class="normal">By using Hydra, users have a better understanding of the arguments. Furthermore, it is far easier to run a code on different settings and  check the result.</p>
+    <p class="normal">While some models may perform exceptionally well in terms of accuracy, they often require a well-defined strategy for successful trading. Our backtester can help you determine the effectiveness of your model in real-world scenarios.</p>
+    <p class="normal">We understand that evaluating models can be challenging, which is why we offer a variety of metrics to help you measure progress towards accomplishing your tasks. By analyzing multiple metrics, you can identify areas for improvement and correct what is not working. To learn more about the pros and cons of each metric, please refer to the metrics section [here](https://github.com/alimohammadiamirhossein/CryptoPredictions/blob/main/Report.pdf).</p>
+    <p class="normal">At CryptoPredictions, we do not fetch indicators from different websites, because it leads to problems such as null rows and the lack of information on indicators for all cryptocurrencies. Instead, CryptoPredictions calculates them in a way that doesn't carry the mentioned problems and could be generalized to other datasets.</p>
+    <p class="normal">We hope that it will inspire you to develop even better projects, and we look forward to your feedback. If you find CryptoPredictions useful and valuable, we would greatly appreciate it if you could take a moment to give it a star on Github. Your support would mean a lot to us and help us to continue improving the library for the community :)</p>
+    <p class="middle">Overview</p>
+    <p class="normal">The main parts of the library are as follows:</p>
+    <p class="normal">CryptoPredictions</p>
+    <p class="normal_space">- train.py                            -- script to train the models, runs factory.trainer.py</p>
+    <p class="normal_space">- backtester.py                       -- script to calculate the profit by selecting a strategy to buy and</p>
+    <p class="normal">sell based on the prediction</p>
+    <p class="normal_space">models</p>
+    <p class="normal_space">&nbsp;&nbsp;&nbsp;&nbsp;- orbit.py</p>
+    <p class="normal_space">&nbsp;&nbsp;&nbsp;&nbsp;- prophet.py</p>
+    <p class="normal_space">&nbsp;&nbsp;&nbsp;&nbsp;- LSTM.py</p>
+    <p class="normal_space">&nbsp;&nbsp;&nbsp;&nbsp;- sarimax.py</p>
+    <p class="normal_space">&nbsp;&nbsp;&nbsp;&nbsp;- random_forest.py</p>
+    <p class="normal_space">&nbsp;&nbsp;&nbsp;&nbsp;- xgboost.py</p>
+    <p class="normal_space">&nbsp;&nbsp;&nbsp;&nbsp;- ....</p>
+    <p class="normal_space">data_loader</p>
+    <p class="normal_space">&nbsp;&nbsp;&nbsp;&nbsp;- CoinMarketDataset</p>
+    <p class="normal_space">&nbsp;&nbsp;&nbsp;&nbsp;- Bitmex</p>
+    <p class="middle">Getting Started  </p>
+    <p class="normal">To get started as quickly as possible, follow the instructions in this section. This should allow you train a model from scratch, evaluate your pretrained models, and produce basic visualizations.  </p>
+    <p class="middle">Dependencies</p>
+    <p class="normal">Make sure you have the following dependencies installed before proceeding:  </p>
+    <p class="normal_space">- Python 3.7+ distribution</p>
+    <p class="normal_space">- pip >= 21.3.1</p>
+    <p class="middle">Virtualenv</p>
+    <p class="normal">You can create and activate virtual environment like below:  </p>
+    <p class="normal_space">```bash  </p>
+    <p class="normal_space">pip install --upgrade virtualenv</p>
+    <p class="normal_space">virtualenv -p python3.7 <venvname>  </p>
+    <p class="normal_space">source <venvname>/bin/activate  </p>
+    <p class="normal_space">pip install --upgrade pip</p>
+    <p class="middle">Requirements  </p>
+    <p class="normal">Furthermore, you just have to install all the packages you need:</p>
+    <p class="normal_space">  ```bash</p>
+    <p class="normal_space">pip install -r requirements.txt  </p>
+    <p class="normal">Before moving forward, you need to install Hydra and know its basic functions to run different modules and APIs.  
+      hydra is A framework for elegantly configuring complex applications with hierarchical structure.
+      For more information about Hydra, read their official page [documentation](https://hydra.cc/).</p>
+    <p class="middle">Hydra</p>
+    <p class="normal">In order to have a better structure and understanding of our arguments, we use Hydra to  dynamically create a hierarchical configuration by composition and override it through config files and the command line.
+      If you have any issues and errors install hydra like below:</p>
+    <p class="normal_space">bash</p>
+    <p class="normal_space">pip install hydra-core --upgrade</p>
+    <p class="normal">for more information about Hydra and config files please visit [here](https://github.com/alimohammadiamirhossein/CryptoPredictions/blob/main/Documents/ARGS_README.md#Hydra).</p>
+    <p class="middle">Dataset</p>
+    <p class="normal">You can use more than 15 cryptocurrencies data by giving the symbol of the selected cryptocurrency to the config files. Moreover, the csv files of these cryptocurrencies could be found in ./data .</p>
+    <p class="middle">Indicators</p>
+    <p class="normal">In order to have a richer dataset, library provides you with more than 30 indicators. You could select the indicators you want to have in your dataset and the library will calculate them and add them to the dataset.</p>
+    <p class="middle">Metrics</p>
+    <p class="normal">The essential step in any machine learning model is to evaluate the accuracy of the model. The list of of available metrics supported by the library is as follow:</p>
+    <p class="normal_space">- accuracy_score: Number of correct predictions/Total number of predictions</p>
+    <p class="normal_space">- precision_score:  the proportion of positively predicted labels that are actually correct</p>
+    <p class="normal_space">- recall_score: the model's ability to correctly predict the positives out of actual positives</p>
+    <p class="normal_space">- f1_score: 2.Precision.Recall/(Precision+Recall)</p>
+    <p class="normal_space">- MAE: Mean Absolute Error</p>
+    <p class="normal_space">- MAPE: Mean Absolute Percentage Error</p>
+    <p class="normal_space">- MASE: Mean Absolute Scaled Error</p>
+    <p class="normal_space">- RMSE: Root Mean Square Error</p>
+    <p class="normal_space">- SMAPE: Symmetric Mean Absolute Percentage Error</p>
+    <p class="normal_space">- Stochastic: the possibility that the outcome is not that expected, given that both the model and parameters are correct</p>
+    <p class="middle">Results</p>
+    <p class="normal">As a conclusion, we tested models using different cryptocurrencies on the various available metrics and the result is as follows:</p>
+    <p class="middle">Report</p>
+    <p class="normal">To gain a better understanding of the models, metrics, and validation method used in this library, we prepared a report and you can read it from [here](https://github.com/alimohammadiamirhossein/CryptoPredictions/blob/main/CryptoPredictions.pdf).</p>
+</div>
+
+
+
+</body>
+</html>
